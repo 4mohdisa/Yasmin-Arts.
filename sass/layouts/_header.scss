@@ -1,0 +1,232 @@
+#desktop-navbar{
+    display: none;
+}
+
+#devugo-navbar {
+    width: 100%;
+    height: 70px;
+    // padding: 0 40px;
+    // box-shadow: 0 8px 6px -6px #000;
+    // background-color: white;
+    // overflow: hidden;
+
+    .devugo-btn {
+        background: var(--primaryColor);
+        color: var(--btnColor);
+        @include transition-ease;
+
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        overflow: hidden;
+
+        .navbar-logo {
+            margin-left: 40px;
+            text-decoration: none;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            background-color: var(--colorBg);
+            @include transition-ease;
+            transform: translateX(100%);
+            // bottom: 0px;
+            height: 100%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            top: 0;
+            opacity: 0.98;
+            @include transition-ease;
+
+            &.open {
+                transform: translateX(0%);
+                // width: 0px;
+            }
+            
+
+            .circle {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                left: 40px;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                border: 2px solid var(--textColor);
+                @include transition-ease;
+                cursor: pointer;
+                top: 10px;
+                @include transition-ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+                i{
+                    color: var(--textColor);
+                    @include transition-ease;
+                }
+            }
+
+            &-menu {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-align: center;
+                margin-top: 100px;
+
+
+                li {
+                    margin-bottom: 100px;
+                    margin-bottom: 100px;
+                    a{
+                        color: var(--textColor);
+                        @include transition-ease;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 27px;
+                    }
+                }
+            }
+        }
+
+        .hamburger {
+            position: relative;
+            margin-right: 40px;
+            cursor: pointer;
+
+            &-stick {
+                position: relative;
+                width: 40px;
+                height: 3px;
+                border-radius: 5px;
+
+                &__one {
+                    background-color: var(--textColor);
+                    @include transition-ease;
+    
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 30px;
+                        height: 3px;
+                        right: 0;
+                        background-color: var(--textColor);
+                        @include transition-ease;
+                        top: 8px;
+                    }
+                }
+
+                &__two {
+                    background-color: var(--textColor);
+                    @include transition-ease;
+                    top: 14px;
+    
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 30px;
+                        height: 3px;
+                        right: 0;
+                        background-color: var(--textColor);
+                        @include transition-ease;
+                        top: 8px;
+                    }
+                }
+            }
+          
+        }
+    }
+}
+
+
+// DEsktop styles
+@include media-md {
+    #devugo-navbar {
+        display: none;
+    }
+
+    #desktop-navbar {
+        display: block;
+        margin-right: 3.5%;
+        margin-left: 3.5%;
+
+        
+        .devugo-btn {
+            background: var(--primaryColor);
+            color: var(--btnColor);
+            @include transition-ease;
+        }
+
+        .content {
+            display: flex;
+            padding: 10px 20px 10px 20px;
+            
+            
+            div:first-child {
+                width: 30%;
+            }
+
+            .navbar {
+                width: 70%;
+                display: flex;
+                justify-content: space-between;
+
+                &-menu {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+
+                    li {
+                        margin-left: 0px;
+                        a{
+                            color: var(--textColor);
+                            @include transition-ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-lg {
+
+    #desktop-navbar {
+        .content {
+            display: flex;
+            padding: 10px 20px 10px 20px;
+            
+            
+            div:first-child {
+                width: 35%;
+            }
+
+            .navbar {
+                width: 65%;
+
+                &-menu {
+
+                    li {
+                        margin-left: 25px;
+                        margin-right: 25px;
+                    }
+                }
+            }
+        }
+        
+    }
+}

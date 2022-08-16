@@ -1,0 +1,38 @@
+$primary-color: #CBFDC3;;
+$secondary-color: #EBF8FF;;
+$tertiary-color: #E5E5E5;;
+$text-color: #2C2E31;;
+$bg-color: #131417;
+
+.light-mode {
+    $bg-color: #fff;
+}
+
+// body {
+//     background-color: $bg-color;
+// }
+
+html {
+    --primaryColor: #CBFDC3;
+    --colorBg: #131417;
+    --textColor: #fff;
+    --cardColor: #2C2E31;
+    --btnColor: #289916;
+    --toggleIconBg: #fff;
+    --artTextColor: rgba(228, 228, 228, 0.26);
+}
+  
+html[data-theme='light'] {
+    --primaryColor: #EBF8FF;
+    --colorBg: #fff;
+    --textColor: #2C2E31;
+    --cardColor: #2C2E31;
+    --btnColor: #4E8DEC;
+    --toggleIconBg: #131417;
+    --artTextColor: rgba(59, 59, 59, 0.26);
+}
+
+body{
+    
+    background: var(--colorBg);
+}
